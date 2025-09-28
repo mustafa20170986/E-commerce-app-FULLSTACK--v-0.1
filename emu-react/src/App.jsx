@@ -1,46 +1,29 @@
-
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './pages/home'
-import Brand from './pages/brands'
-import PhoneCard from './components/phone-card'
-import Samusung from './pages/samusung'
-import { Setprovider } from './components/setprodiver'
-import Oppo from './pages/oppo'
-import Vivo from './pages/vivo'
-import Xiaomi from './pages/xiaomi'
-import Iphone from './pages/iphone'
-import Phonedetails from './components/phone-details'
-import Phonelist from './pages/find-phone'
-
-
-
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//import Form from './pages/home'
+//import Home from './components/login';
+//import Form from './components/form';
+import Formhd from './components/form.jsx';
+import Setprovider from './components/setprovider';
+import Home from './components/home.jsx';
+import Secrect from './components/secrect.jsx';
 function App() {
-
-
   return (
-   
-    <div data-theme="nord">
-      <Setprovider>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>}> </Route>
-        <Route path="/brands" element={<Brand/>}></Route>
-<Route path="/samusung" element={<Samusung/>}></Route>
-<Route path="/oppo" element={<Oppo/>}></Route>
-<Route path="/vivo" element={<Vivo/>}></Route>
-<Route path="/xiaomi" element={<Xiaomi/>}></Route>
-<Route path="/iphone" element={<Iphone/>}></Route>
-<Route path="/phones/:brand/:name" element={<Phonedetails/>}></Route>
-<Route path="/price" element={<Phonelist/>}></Route>
-      </Routes>
-  
-      </BrowserRouter>
+ <>
+ <Setprovider>
+  <BrowserRouter>
+ <Routes> 
+  <Route path="/login" element={<Formhd/>}></Route>
+  <Route path="/home" element={<Home/>}></Route>
+    <Route path="/secrect" element={<Secrect/>}></Route>
+  </Routes>
+ </BrowserRouter>
  </Setprovider>
-    </div>
-    
-  )
+ </>
+  );
 }
 
-export default App
+
+
+export default App;
