@@ -1,25 +1,29 @@
-import { useContext } from "react"
-import { Store } from "./context-api"
-import { useNavigate } from "react-router-dom"
-
+import {useUser,useAuth, SignIn, UserProfile, UserButton} from'@clerk/clerk-react'
+import Loading from './loading'
+import Homepage from '../pages/Homepage'
+import Sidebar from './sidebar'
 function Home(){
-    const{name,year}=useContext(Store)
-    const navigate=useNavigate()
-    const redirect=()=>{
-        navigate("/secrect")
-    }
-    return(
-        <div className="emu">
-            <h1 className="text-bold text-indigo-500">welcome there {name}</h1>
-            <h2 className="font-semibold text-red-500">Year{year}</h2>
+    const{user, isLoaded }=useUser()
+    const  { isSignedIn}=useAuth()
 
-            <h1 className="font-semibold text-pink-400">
-                 Go to Protected route 
-            </h1>
-            <button className="btn btn-accent bnt-outline" onClick={redirect}>
-                Protected
-            </button>
-        </div>
-    )
+    if(!user || !isSignedIn)
+        return <Homepage/> //make this <SignIn/> to work 
+        if(!isLoaded)
+            return <Loading/>
+
+        return(
+            <>
+            <Sidebar/>
+            <div className='flex flex-col gap-4'>
+            <h2 className='text-5xl'>NOTE DRIVE</h2>
+            <div className='flex gap-4'>
+            <h1 className='text-indigo-500 text-2xl'> welcome {user.firstName}</h1>
+            <div className="flex flex-1">
+            <UserButton/>
+            </div>
+            </div>
+            </div>
+            </>
+        )
 }
 export default Home
