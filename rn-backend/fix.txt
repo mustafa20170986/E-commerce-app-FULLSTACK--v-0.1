@@ -1,0 +1,7 @@
+some fix more need for the get request they are not chnaging 
+after delete or update request take place . have to delete the old cahce key on 
+the dedicacted file (put,delete req file)
+
+i know its painful for starting all the servr manually 
+soon docker will take place 
+

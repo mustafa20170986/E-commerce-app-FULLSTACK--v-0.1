@@ -1,0 +1,5 @@
+function Wider(){
+  return(
+    <figure
+  )
+}

@@ -1,0 +1,6 @@
+in the forntend there are some issue like cliking the 
+product for navigate making  hte dispaly black hwite 
+will fix this in future , some text -invisible issue can be 
+fix with text-base-content and some responsive issue will also be 
+fixed in future . if somehting wont load make a refresh 
+it will succuefull got loaded 

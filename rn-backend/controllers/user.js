@@ -20,7 +20,7 @@ async function syncuser(clerkuserid){
         user=await prisma.user.create({ //create new user 
             data:{
                 clerkId:clerkuserid, //with his own provided id
-role:"member" //set the role as member 
+role:"BUYER" //set the role as member 
             }
         })
     }
